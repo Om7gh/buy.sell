@@ -112,10 +112,12 @@ function loginUser($conn, $email, $password){
         header("location: login_form.php?error=wronglogin");
         exit();
     }
+
+
     else if ($checkPass === true) {
         session_start();
         $_SESSION['useremail'] = $emailExist["email"];
-        header('location: index.php');
+        header('location: home.php');
         exit();
     }
 }
